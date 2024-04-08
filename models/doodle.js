@@ -1,13 +1,41 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-// Create the schema 
-const doodleSchema = new Schema({
 
+const commentSchema = new Schema({
+    content: {
+        type: String,
+        required: true
+    },
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
+    },
+    userName: String,
+    userAvatar: String
+})
+
+const doodleSchema = new Schema({
+    img: {
+        type: String,
+        required: true
+    },
+    description: {
+        type: String,
+        required: false
+    },
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
+    },
+    comments: [commentSchema],
+    userName: String,
+    userAvatar: String
 }, {
-// automatically adds createdAt and updatedAt fields to every document
     timestamps: true
 });
 
-// Compile the schema into a model, and export the model.
+
 module.exports = mongoose.model('Doodle', doodleSchema);

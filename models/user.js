@@ -8,7 +8,9 @@ const userSchema = new Schema({
         required: true
     },
     email: String,
-    avatar: String
+    avatar: String,
+    image: String,
+    bio: String,
 }, {
     timestamps: true
 });

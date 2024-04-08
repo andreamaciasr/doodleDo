@@ -1,10 +1,17 @@
 <%- include('../partials/header') %>
 
-<div>
-    <img id="profile-avatar" src="<%= user.avatar %>" alt="avatar">
-    <span><%= user.name %></span>
-</div>
+    <div>
+        <img id="profile-avatar" src="<%= user.avatar %>" alt="avatar">
+        <span>
+            <%= user.name %>
+        </span>
+    </div>
+    <a href="/doodles/new">Add doodle</a>
+
+    <div>
+
+    </div>
 
 
 
-<%- include('../partials/footer') %>
+    <%- include('../partials/footer') %>
