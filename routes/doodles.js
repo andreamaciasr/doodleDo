@@ -2,7 +2,8 @@ var express = require('express');
 var router = express.Router();
 const doodlesCtrl = require('../controllers/doodles');
 const upload = require('../config/multer');
-const cloudinary = require('../config/cloudinary')
+const cloudinary = require('../config/cloudinary');
+const ensureLoggedIn = require('../config/ensureLoggedIn');
 
 router.get('/', function(req, res) {
   res.render('doodles/index', {title: 'feed', user: req.user});
@@ -21,6 +22,6 @@ router.post('/new', upload.single('image'), function(req, res) {
   })
 })
 
-
+// router.get("/:id", ensureLoggedIn, doodlesCtrl.show)
 
 module.exports = router;

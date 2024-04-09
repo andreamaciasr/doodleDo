@@ -7,7 +7,7 @@ const commentSchema = new Schema({
         type: String,
         required: true
     },
-    user: {
+    createdBy: {
         type: Schema.Types.ObjectId,
         ref: 'User',
         required: true
@@ -17,18 +17,27 @@ const commentSchema = new Schema({
 })
 
 const doodleSchema = new Schema({
-    img: {
+    img: { //cloudinary link res.cloudinary.com/... you can just plug in the <a> href
         type: String,
-        required: true
+        required: true,
+    },
+    cloudinaryId: {
+        type: String,
+        required: true,
     },
     description: {
         type: String,
         required: false
     },
-    user: {
+    createdBy: {
         type: Schema.Types.ObjectId,
         ref: 'User',
         required: true
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now,
+        required: true,
     },
     comments: [commentSchema],
     userName: String,
