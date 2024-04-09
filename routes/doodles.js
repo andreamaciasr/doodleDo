@@ -17,14 +17,8 @@ router.post('/new', upload.single('image'), function(req, res) {
     if (err) {
       console.groupCollapsed(err);
     }
-
-    res.status(200).json( {
-      success: true,
-      message: "Uploaded",
-      data: result,
-    })
+    res.redirect('/users/:userId');
   })
-  res.send("image uploaded");
 })
 
 
