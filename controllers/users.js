@@ -1,7 +1,16 @@
-var express = require('express');
-var router = express.Router();
-const doodlesCtrl = require('../controllers/doodles');
-const upload = require('../config/multer');
-const cloudinary = require('../config/cloudinary');
+const Doodle = require('../models/doodle');
 const ensureLoggedIn = require('../config/ensureLoggedIn');
+const user = require('../models/user');
 
+module.exports = {
+    getAll,
+}
+
+async function getAll(req, res) {
+    try {
+        const doodles = await Doodle.find({ createdBy: req.user.id}).sort({ createdAt: "desc" }).lean();
+        res.render('users/show', {title: doodles.createdBy, doodles})
+    } catch (error) {
+        console.log(error);
+    }
+}

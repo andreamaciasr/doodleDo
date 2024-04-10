@@ -4,14 +4,14 @@
 <h1>feed</h1>
 
 
-<div id="feed">
+<div class="feed">
     <% doodles.forEach(function(doodle) { %>
     <li>
         <a href="/doodle/<%= doodle._id %>">
             <img class="feed-post" src="<%= doodle.img %>">
         </a>
     </li>
-<% }); %>
+    <% }); %>
 </div>
 
 <%- include('../partials/footer') %>

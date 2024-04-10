@@ -13,7 +13,7 @@ module.exports = {
 async function getFeed(req, res) { // this return an array of doodles
     try {
         const doodles = await Doodle.find().sort({ createdAt: "desc" }).lean();
-        res.render('doodles/index', { title: "Feed", doodles, user: req.user })
+        res.render('doodles/index', { title: "Home", doodles, user: req.user })
     } catch (error) {
         console.log(error);
     }

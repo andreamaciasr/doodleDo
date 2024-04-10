@@ -38,3 +38,9 @@ a {
   width: 60px; 
   height: 60px;
 }
+
+.feed {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
