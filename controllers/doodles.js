@@ -21,8 +21,8 @@ async function getFeed(req, res) { // this return an array of doodles
 
 async function show(req, res) {
     try {
-        const doodle = await Doodle.findById(req.params.id);
-        res.render("doodles/show.ejs", { title: "Doodle", doodle, user: req.user })
+        const doodle = await Doodle.findById(req.params.doodleId);
+        res.render('doodles/show.ejs', { title: doodle.createdBy, doodle })
     } catch (error) {
         console.log(error);
     }

@@ -13,7 +13,7 @@ require('./config/passport');
 var indexRouter = require('./routes/index');
 var doodlesRouter = require('./routes/doodles');
 var usersRouter = require('./routes/users');
-var uploadRouter = require('./routes/upload');
+// var uploadRouter = require('./routes/upload');
 
 var app = express();
 
