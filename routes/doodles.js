@@ -5,22 +5,12 @@ const upload = require('../config/multer');
 const cloudinary = require('../config/cloudinary');
 const ensureLoggedIn = require('../config/ensureLoggedIn');
 
-router.get('/', function(req, res) {
-  res.render('doodles/index', {title: 'feed', user: req.user});
-});
+router.get('/', doodlesCtrl.getFeed)
 
-router.get('/new', function(req, res) {
-  res.render('doodles/new', {title: 'New Doodle'});
-})
+router.get('/new', doodlesCtrl.new);
 
-router.post('/new', upload.single('image'), function(req, res) {
-  cloudinary.uploader.upload(req.file.path, function(err, result) {
-    if (err) {
-      console.groupCollapsed(err);
-    }
-    res.redirect('/users/:userId');
-  })
-})
+router.post('/new', upload.single('image'), doodlesCtrl.create);
+
 
 // router.get("/:id", ensureLoggedIn, doodlesCtrl.show)
 

@@ -7,8 +7,10 @@ const usersController = require('../controllers/users');
 // })
 
 router.get('/users/:userId', function(req, res) {
-    res.render('users/show', { title: "user",  user: req.user });
+    // res.render('users/show', { title: "user",  user: req.user });
 });
+
+router.get('users/:userId', usersController.getAll);
 
 
 
