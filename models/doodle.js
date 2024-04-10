@@ -7,13 +7,10 @@ const commentSchema = new Schema({
         type: String,
         required: true
     },
-    createdBy: {
-        type: Schema.Types.ObjectId,
-        ref: 'User',
-        required: true
-    },
     userName: String,
     userAvatar: String
+}, {
+    timestamps: true,
 })
 
 const doodleSchema = new Schema({
@@ -40,8 +37,6 @@ const doodleSchema = new Schema({
         required: true,
     },
     comments: [commentSchema],
-    userName: String,
-    userAvatar: String
 }, {
     timestamps: true
 });

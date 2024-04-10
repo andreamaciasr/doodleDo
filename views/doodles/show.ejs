@@ -3,7 +3,25 @@
 <div class="feed">
     <img class="feed-post" src="<%= doodle.img %>">
 </div>
-<div class="comment">
-    <form action=""></form>
+<div>
+    <% if (user) { %>
+        <form id="add-comment-form" method="POST"
+        action="/doodles/<%= doodle._id %>/comments">
+        <label for="comment"></label>
+        <textarea name="content" rows="4" cols="50"></textarea>
+        <button class="submit-button" type="submit">Submit</button>
+        </form>
+    <% } %>
+</div>
+
+<div>
+    <% if (doodle.comments.length) { %>
+        <% doodle.comments.forEach(function(c) { %>
+        <tr>
+            <td class="review"><img alt="avatar" src="<%= c.userAvatar %>" referrerpolicy="no-referrer" ><%= c.userName %></td>
+            <td><%= c.content%></td>
+        </tr>
+       <% }) %>
+    <% } %>
 </div>
 <%- include('../partials/footer') %>
