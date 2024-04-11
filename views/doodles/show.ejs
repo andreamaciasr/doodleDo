@@ -1,23 +1,26 @@
 <%- include('../partials/header') %>
     <br><br><br>
-    <div class="feed">
-        <img class="feed-post" src="<%= doodle.img %>">
-    </div>
-    <div>
-        <form action="/doodles/<%= doodle._id %>?_method=PUT" method="POST">
-            <button id="like" type="submit">
-                <img src="/images/like.png" alt="like-button">
-            </button>
-            <div><%= doodle.likes %></div>
-        </form>
-    </div>
+    <div id="view">
+        <div class="feed">
+            <img class="feed-post" src="<%= doodle.img %>">
+        </div>
+        <div>
+            <form action="/doodles/<%= doodle._id %>?_method=PUT" method="POST">
+                <button id="like" type="submit">
+                    <img src="/images/like.png" alt="like-button">
+                </button>
+                <div>
+                    <%= doodle.likes %>
+                </div>
+            </form>
+        </div>
 
-        
+
         </button>
         <% if (user) { %>
             <form id="add-comment-form" method="POST" action="/doodles/<%= doodle._id %>/comments">
                 <label for="comment"></label>
-                <textarea name="content" rows="4" cols="50"></textarea>
+                <textarea id="text-area" name="content" rows="4" cols="50"></textarea>
                 <button class="submit-button" type="submit">Submit</button>
             </form>
             <% } %>
@@ -47,5 +50,6 @@
                 </tr>
                 <% }) %>
                     <% } %>
+        </div>
     </div>
     <%- include('../partials/footer') %>

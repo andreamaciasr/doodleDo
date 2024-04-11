@@ -1,6 +1,6 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 a {
@@ -39,12 +39,115 @@ a {
   height: 60px;
 }
 
-.feed {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
+
+ 
+#add-comment-form {
+  display: inline-flex;
+  padding-left: 2vmin;
+  padding-right: 2vim;
 }
 
-.submit-button{
-  color:coral
+#like {
+  background-color: transparent;
+  border: 0;
 }
+.submit-button{
+  color:rgb(255, 255, 255);
+  margin-top: 4vmin;
+  padding: 2vmin;
+  font-size: 2vmin;
+  border-radius: 3vmin;
+  border: 0.1vmin solid coral;
+  
+  background-color: coral;
+}
+
+#gif {
+ height: 60vmin;
+ width: 60vims;
+ display: flex;
+
+
+}
+
+#index-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.karla {
+  font-family: "Karla", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.titles {
+  font-family: 'karla';
+  font-size: 5vmin;
+  font-weight: 800;
+}
+
+a {
+  text-decoration: none; 
+  color: inherit; 
+}
+
+/* .circle {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.926);
+  padding: 12px 55px;
+  border-radius: 38%;
+  border: 3px solid #000000f5;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1); 
+} */
+
+
+
+.feed {
+  display: inline-block;
+  text-align: center;
+  list-style-type: none;
+  justify-content: center;
+}
+
+
+.feed-container {
+  width: 530px; /* Set standard width */
+}
+
+.feed-post {
+  display: inline-block; /* Ensures the image takes up the entire width of its container */
+  width: 100%; /* Makes the image responsive */
+  height: auto; /* Maintains the aspect ratio of the image */
+  border-radius: 10px; 
+  margin: 10px;
+  padding: 10px;
+}
+
+.nav-container {
+    width: 100%;
+    background-color: yellow;
+}
+
+nav {
+  position: fixed;
+  display: flex;
+  left: 180vmin;
+  top: 2vmin;
+  background-color: yellow;
+}
+
+nav a {
+  display: inline-block; /* Display anchors as inline elements */
+  margin-right: 80px; /* Adjust the margin between links */
+  
+}
+
+#text-area {
+  border-color: rgb(6, 155, 6);
+  border-width: .3vmin;
+}
+
