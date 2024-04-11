@@ -7,6 +7,7 @@ module.exports = {
     getFeed,
     show,
     new: newDoodle,
+    addLike,
 }
 
 
@@ -48,5 +49,38 @@ async function create(req, res) {
     } catch (error) {
         console.log("error creating doodle model");
         res.status(500).send("Error uploading doodle");;
+    }
+}
+
+
+
+// async function addLike(req, res) {
+//     try {
+//     const doodle = await Doodle.findById(req.params.doodleId);
+//     if (!doodle) {
+//         return res.status(404).send("Doodle not found");
+//     }
+//     doodle.likes += 1;
+//     let num = doodle.likes
+//     await doodle.save();
+//     res.render('doodles/show', { title: "DoodleDo", likes: doodle.likes });
+//     } catch(error) {
+//         console.log(error);
+//     }
+// }
+
+async function addLike(req, res) {
+    try {
+        const doodle = await Doodle.findById(req.params.doodleId);
+        if (!doodle) {
+            return res.status(404).send("Doodle not found");
+        }
+
+        doodle.likes += 1;
+        await doodle.save();
+
+        res.render('doodles/show', { title: "DoodleDo", doodle, likes: doodle.likes }); 
+    } catch (error) {
+        console.log(error);
     }
 }

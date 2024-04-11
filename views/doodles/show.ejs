@@ -4,6 +4,16 @@
         <img class="feed-post" src="<%= doodle.img %>">
     </div>
     <div>
+        <form action="/doodles/<%= doodle._id %>?_method=PUT" method="POST">
+            <button id="like" type="submit">
+                <img src="/images/like.png" alt="like-button">
+            </button>
+            <div><%= doodle.likes %></div>
+        </form>
+    </div>
+
+        
+        </button>
         <% if (user) { %>
             <form id="add-comment-form" method="POST" action="/doodles/<%= doodle._id %>/comments">
                 <label for="comment"></label>
@@ -25,14 +35,17 @@
                     </td>
                     <td></td>
                     <td>
-                    <% if (user?._id.equals(c.user)) { %>
-                        <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
-                            <button type="submit">X</button>
-                        </form>
-                    <% } %>
+
+                    <td></td>
+                    <td>
+                        <% if (user?._id.equals(c.user)) { %>
+                            <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
+                                <button type="submit">X</button>
+                            </form>
+                            <% } %>
                     </td>
                 </tr>
                 <% }) %>
-            <% } %>
+                    <% } %>
     </div>
     <%- include('../partials/footer') %>

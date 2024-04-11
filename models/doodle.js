@@ -41,6 +41,10 @@ const doodleSchema = new Schema({
         default: Date.now,
         required: true,
     },
+    likes: {
+        type: Number,
+        default: 0,
+    },
     comments: [commentSchema],
 }, {
     timestamps: true

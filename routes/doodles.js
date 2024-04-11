@@ -15,7 +15,7 @@ router.post('/new', upload.single('image'), doodlesCtrl.create);
 
 router.get('/:doodleId', doodlesCtrl.show);
 
+router.put('/:doodleId', doodlesCtrl.addLike);
 
-// router.get("/:id", ensureLoggedIn, doodlesCtrl.show)
 
 module.exports = router;
