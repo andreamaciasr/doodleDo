@@ -1,0 +1,18 @@
+<%- include('../partials/header') %>
+
+    <br><br><br><br>
+
+    <div>
+        <% doodles.forEach(function(doodle) { %>
+            <li class="feed">
+                <a href="/users/<%= doodle._id%>">
+                    <img class="feed-post" src="<%= doodle.img %>">
+                </a>
+            </li>
+            <% }); %>
+    </div>
+    <br>
+
+
+
+    <%- include('../partials/footer') %>

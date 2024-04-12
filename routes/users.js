@@ -9,5 +9,6 @@ router.get('/logout', function(req, res){
     });
 });
 
+router.get('/doodles/users/:userId', usersController.showUser);
 
 module.exports = router;
