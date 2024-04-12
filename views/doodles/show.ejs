@@ -1,55 +1,54 @@
 <%- include('../partials/header') %>
     <br><br><br>
-    <div id="view">
+    <div>
         <div class="feed">
             <img class="feed-post" src="<%= doodle.img %>">
         </div>
-        <div>
+        <div class="like-container">
             <form action="/doodles/<%= doodle._id %>?_method=PUT" method="POST">
                 <button id="like" type="submit">
                     <img src="/images/like.png" alt="like-button">
                 </button>
-                <div>
-                    <%= doodle.likes %>
-                </div>
             </form>
+            <div class="like-count">
+                <%= doodle.likes %>
+            </div>
+            <div id="username-view">
+                &nbsp;&nbsp; Created by: <%= doodle.userName %>
+            </div>
         </div>
+        <br><br>
 
 
-        </button>
         <% if (user) { %>
             <form id="add-comment-form" method="POST" action="/doodles/<%= doodle._id %>/comments">
                 <label for="comment"></label>
                 <textarea id="text-area" name="content" rows="4" cols="50"></textarea>
-                <button class="submit-button" type="submit">Submit</button>
+                &nbsp;&nbsp;&nbsp;&nbsp;<button class="submit-button" type="submit">Submit</button>
             </form>
             <% } %>
     </div>
-
+    <br><br>
     <div>
         <% if (doodle.comments.length) { %>
             <% doodle.comments.forEach(function(c) { %>
                 <tr>
-                    <td class="comment"><img alt="avatar" src="<%= c.userAvatar %>" referrerpolicy="no-referrer">
-                        <%= c.userName %>
+                    <td class="comment"><img  id="avatar-comment" src="<%= c.userAvatar %>" referrerpolicy="no-referrer">
+                        <%= c.userName %>:
                     </td>
                     <td>
-                        <%= c.content%>
+                        <%= c.content %>
                     </td>
-                    <td></td>
+                    <% if (user?._id.equals(c.user)) { %>
                     <td>
-
-                    <td></td>
-                    <td>
-                        <% if (user?._id.equals(c.user)) { %>
-                            <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
-                                <button type="submit">X</button>
-                            </form>
-                            <% } %>
+                        <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
+                            <button type="submit">X</button>
+                        </form>
                     </td>
+                        <% } %>
                 </tr>
                 <% }) %>
-                    <% } %>
-        </div>
+            <% } %>
+    </div>
     </div>
     <%- include('../partials/footer') %>

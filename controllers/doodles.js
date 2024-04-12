@@ -41,6 +41,7 @@ async function create(req, res) {
             cloudinaryId: result.public_id,
             createdBy: req.user.id,
             createdAt: result.created_at,
+            userName: req.user.name
         }
         const doodle = await Doodle.create(obj)
 

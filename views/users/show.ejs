@@ -3,7 +3,7 @@
     <br><br><br><br>
     <div>
         <img id="profile-avatar" src="<%= user.avatar %>" alt="avatar">
-        <span>
+        <span id="user-name-view">
             <%= user.name %>
         </span>
     </div>
@@ -14,13 +14,10 @@
                     <img class="feed-post" src="<%= doodle.img %>">
                 </a>
             </li>
-        <% }); %>
+            <% }); %>
     </div>
-    <a href="/doodles/new">Add doodle</a>
-
-    <div>
-
-    </div>
+    <br>
+    <!-- <a class="submit-button" href="/doodles/new">Add doodle</a> -->
 
 
 

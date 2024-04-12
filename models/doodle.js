@@ -45,6 +45,11 @@ const doodleSchema = new Schema({
         type: Number,
         default: 0,
     },
+    userName: {
+        type: String,
+        required: true,
+    },
+
     comments: [commentSchema],
 }, {
     timestamps: true

@@ -1,6 +1,6 @@
 body {
   padding: 50px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Karla", sans-serif;
 }
 
 a {
@@ -18,29 +18,55 @@ a {
   height: 30px;
 }
 
-/* #avatar, #logo {
-  position: absolute;
-  top: 0;
-  left: 0;
-} */
 
-#avatar {
+.avatar {
   position: absolute;
   top: 0;
   left: 2;
-  border-radius: 50%; 
-  width: 60px; 
+  border-radius: 50%;
+  width: 60px;
   height: 60px;
 }
+
+#avatar-comment {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+}
+
+#profile-avatar {
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
+  border-color: coral;
+}
+
+#user-name-view {
+  font-size: large;
+  font-family: "Karla", sans-serif;
+  font-weight: 800;
+  font-size: 5vmin;
+  font-style: italic;
+}
+
+.comment {
+  margin-left: 3vmin;
+}
+
 #logo {
   position: absolute;
-  border-radius: 30%; 
-  width: 60px; 
+  border-radius: 30%;
+  width: 60px;
   height: 60px;
 }
 
+.comment {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 2vmin;
+  color: rgb(92, 88, 88);
+}
 
- 
 #add-comment-form {
   display: inline-flex;
   padding-left: 2vmin;
@@ -51,21 +77,31 @@ a {
   background-color: transparent;
   border: 0;
 }
-.submit-button{
-  color:rgb(255, 255, 255);
+
+.submit-button {
+  color: rgb(255, 255, 255);
   margin-top: 4vmin;
   padding: 2vmin;
   font-size: 2vmin;
   border-radius: 3vmin;
   border: 0.1vmin solid coral;
-  
+  margin-right: 10px;
   background-color: coral;
+
+}
+
+.like-count {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 2vmin;
+  color: rgb(92, 88, 88);
+
 }
 
 #gif {
- height: 60vmin;
- width: 60vims;
- display: flex;
+  height: 60vmin;
+  width: 60vims;
+  display: flex;
 
 
 }
@@ -91,8 +127,8 @@ a {
 }
 
 a {
-  text-decoration: none; 
-  color: inherit; 
+  text-decoration: none;
+  color: inherit;
 }
 
 /* .circle {
@@ -107,43 +143,49 @@ a {
 
 
 .feed {
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
   text-align: center;
   list-style-type: none;
-  justify-content: center;
+  align-items: center;
 }
 
 
 .feed-container {
-  width: 530px; /* Set standard width */
+  width: 530px;
 }
 
 .feed-post {
-  display: inline-block; /* Ensures the image takes up the entire width of its container */
-  width: 100%; /* Makes the image responsive */
-  height: auto; /* Maintains the aspect ratio of the image */
-  border-radius: 10px; 
+  display: inline-block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
   margin: 10px;
   padding: 10px;
 }
 
 .nav-container {
-    width: 100%;
-    background-color: yellow;
+  width: 100%;
 }
 
 nav {
   position: fixed;
-  display: flex;
-  left: 180vmin;
-  top: 2vmin;
-  background-color: yellow;
+  display: inline-flex;
+  left: 170vmin;
+  top: 4vmin;
+
 }
 
 nav a {
-  display: inline-block; /* Display anchors as inline elements */
-  margin-right: 80px; /* Adjust the margin between links */
-  
+  display: inline-block;
+  margin-right: 80px;
+
+}
+
+#plus {
+  position: absolute;
+  width: 8vmin;
+  height: 8vmin;
 }
 
 #text-area {
@@ -151,3 +193,12 @@ nav a {
   border-width: .3vmin;
 }
 
+.like-container {
+  display: flex;
+  align-items: center;
+}
+
+.like-container button {
+  margin-right: 10px;
+  
+}
