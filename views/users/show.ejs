@@ -1,11 +1,14 @@
 <%- include('../partials/header') %>
 
     <br><br><br><br>
-    <div>
+    <div id="header-user-view">
         <img id="profile-avatar" src="<%= user.avatar %>" alt="avatar">
         <span id="user-name-view">
-            <%= user.name %>
+            <%= user.name %> &nbsp;
         </span>
+    <button id="logout">
+        <a href="/logout">🌈 LOG OUT 🦕</a>
+    </button>    
     </div>
     <div>
         <% doodles.forEach(function(doodle) { %>

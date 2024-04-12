@@ -2,9 +2,10 @@ const express = require('express');
 const router = express.Router();
 const doodlesCtrl = require('../controllers/doodles');
 const upload = require('../config/multer');
+const ensureLoggedIn = require('../config/ensureLoggedIn');
 
 
-router.get('/', doodlesCtrl.getFeed)
+router.get('/', ensureLoggedIn, doodlesCtrl.getFeed)
 
 router.get('/new', doodlesCtrl.new);
 
