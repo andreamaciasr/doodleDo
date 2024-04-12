@@ -3,9 +3,6 @@ body {
   font-family: "Karla", sans-serif;
 }
 
-a {
-  color: #00B7FF;
-}
 
 .login {
   display: flex;
@@ -197,7 +194,7 @@ nav a {
   border-radius: 15%;
   color: coral;
   font-size: 2vmin;
-  left: 127vmin;
+  left: 98vmin;
   bottom: 7vmin;
   position: relative;
   box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.1);
