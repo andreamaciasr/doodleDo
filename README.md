@@ -12,8 +12,8 @@ Thanks for coming by, I'm excited to see your doodles, or garabatos, as we say i
 
 # Screenshot
 
-<img width="400" height="400" src="./public/images/DoodleDo-2.png">
-<img width="400" height="400" src="./public/images/DoodleDo-1.png">
+<img src="./public/images/DoodleDo-2.png">
+<img src="./public/images/DoodleDo-1.png">
 
 # Technologies Used
 
