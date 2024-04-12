@@ -7,9 +7,11 @@
                 <a href="/doodles/<%= doodle._id %>">
                     <div class="feed-container">
                         <img class="feed-post" src="<%= doodle.img %>">
-                        <span id="user-name"><%= doodle.userName %></span>
+                        <a href="/doodles/<%= doodle.createdBy %>">
+                            <span id="user-name"><%= doodle.userName %></span>
+                        </a>
                         <img id="like-feed" src="/images/like.png">
-                        <% if (doodle.likes) {%>
+                        <% if (doodle.likes > 0) {%>
                             <span class="avatar-post"><%= doodle.likes %></span>
                         <% } %>
                     </div>

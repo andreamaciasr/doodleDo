@@ -100,7 +100,7 @@ a {
 
 #gif {
   height: 60vmin;
-  width: 60vims;
+  width: 60vmin;
   display: flex;
 
 
@@ -166,19 +166,20 @@ a {
 
 .nav-container {
   width: 100%;
+  position: relative;
 }
 
 nav {
   position: fixed;
   display: inline-flex;
-  left: 170vmin;
   top: 4vmin;
+  right: 7vmin;
 
 }
 
 nav a {
   display: inline-block;
-  margin-right: 80px;
+  margin-right: 8vmin;
 
 }
 
