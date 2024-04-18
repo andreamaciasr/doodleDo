@@ -1,23 +1,22 @@
 <%- include('../partials/header') %>
     
-
-    <div class="feed">
+    <div class='feed'>
         <% doodles.forEach(function(doodle) { %>
             <li>
-                <a href="/doodles/<%= doodle._id %>">
-                    <div class="feed-container">
-                        <img class="feed-post" src="<%= doodle.img %>">
-                        <a href="/doodles/users/<%= doodle.createdBy %>">
-                            <span id="user-name"><%= doodle.userName %></span>
+                <a href='/doodles/<%= doodle._id %>'>
+                    <div class='feed-container'>
+                        <img class='feed-post' src='<%= doodle.img %>'>
+                        <a href='/doodles/users/<%= doodle.createdBy %>'>
+                            <span id='user-name'><%= doodle.userName %></span>
                         </a>
-                        <img id="like-feed" src="/images/like.png">
+                        <img id='like-feed' src='/images/like.png'>
                         <% if (doodle.likes > 0) {%>
-                            <span class="avatar-post"><%= doodle.likes %></span>
+                            <span class='avatar-post'><%= doodle.likes %></span>
                         <% } %>
                     </div>
                 </a>
             </li>
-            <% }); %>
+        <% }); %>
     </div>
 
-    <%- include('../partials/footer') %>
+<%- include('../partials/footer') %>

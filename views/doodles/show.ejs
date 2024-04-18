@@ -1,19 +1,19 @@
 <%- include('../partials/header') %>
     <br><br><br>
     <div>
-        <div class="feed">
-            <img class="feed-post" src="<%= doodle.img %>">
+        <div class='feed'>
+            <img class='feed-post' src='<%= doodle.img %>'>
         </div>
-        <div class="like-container">
-            <form action="/doodles/<%= doodle._id %>?_method=PUT" method="POST">
-                <button id="like" type="submit">
-                    <img src="/images/like.png" alt="like-button">
+        <div class='like-container'>
+            <form action='/doodles/<%= doodle._id %>?_method=PUT' method='POST'>
+                <button id='like' type='submit'>
+                    <img src='/images/like.png' alt='like-button'>
                 </button>
             </form>
-            <div class="like-count">
+            <div class='like-count'>
                 <%= doodle.likes %>
             </div>
-            <div id="username-view">
+            <div id='username-view'>
                 &nbsp;&nbsp; Created by: <%= doodle.userName %>
             </div>
         </div>
@@ -21,10 +21,10 @@
 
 
         <% if (user) { %>
-            <form id="add-comment-form" method="POST" action="/doodles/<%= doodle._id %>/comments">
-                <label for="comment"></label>
-                <textarea id="text-area" name="content" rows="4" cols="50"></textarea>
-                &nbsp;&nbsp;&nbsp;&nbsp;<button class="submit-button" type="submit">Submit</button>
+            <form id='add-comment-form' method='POST' action='/doodles/<%= doodle._id %>/comments'>
+                <label for='comment'></label>
+                <textarea id='text-area' name='content' rows='4' cols='50'></textarea>
+                &nbsp;&nbsp;&nbsp;&nbsp;<button class='submit-button' type='submit'>Submit</button>
             </form>
             <% } %>
     </div>
@@ -33,7 +33,7 @@
         <% if (doodle.comments.length) { %>
             <% doodle.comments.forEach(function(c) { %>
                 <tr>
-                    <td class="comment"><img  id="avatar-comment" src="<%= c.userAvatar %>" referrerpolicy="no-referrer">
+                    <td class='comment'><img  id='avatar-comment' src='<%= c.userAvatar %>' referrerpolicy='no-referrer'>
                         <%= c.userName %>:
                     </td>
                     <td>
@@ -41,14 +41,14 @@
                     </td>
                     <% if (user?._id.equals(c.user)) { %>
                     <td>
-                        <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
-                            <button type="submit">X</button>
+                        <form action='/comments/<%= c._id %>?_method=DELETE' method='POST'>
+                            <button type='submit'>X</button>
                         </form>
                     </td>
                         <% } %>
                 </tr>
                 <% }) %>
             <% } %>
+        </div>
     </div>
-    </div>
-    <%- include('../partials/footer') %>
+<%- include('../partials/footer') %>

@@ -10,7 +10,6 @@ module.exports = {
     addLike,
 }
 
-
 async function getFeed(req, res) { // this return an array of doodles
     try {
         const doodles = await Doodle.find().sort({ createdAt: "desc" }).lean();
@@ -53,8 +52,6 @@ async function create(req, res) {
         res.status(500).send("Error uploading doodle");;
     }
 }
-
-
 
 async function addLike(req, res) {
     try {

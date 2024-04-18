@@ -28,7 +28,6 @@ async function deleteComment(req, res) {
     doodle.comments.remove(req.params.commentId);
     await doodle.save();
     res.redirect(`/doodles/${doodle._id}`);
-
 }
 
 

@@ -1,7 +1,6 @@
 const Doodle = require('../models/doodle');
 const ensureLoggedIn = require('../config/ensureLoggedIn');
 
-
 module.exports = {
     getAll,
     showUser

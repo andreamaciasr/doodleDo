@@ -1,25 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <title><%= title %></title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <link rel='preconnect' href='https://fonts.googleapis.com'>
+<link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+<link href='https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap' rel='stylesheet'>
 </head>
 <body>
- <div class="nav-container">
+ <div class='nav-container'>
     <nav>
-      <a href="/doodles/new">
-        <img id="plus" src="/images/plus1.png" alt="plus">
+      <a href='/doodles/new'>
+        <img id='plus' src='/images/plus1.png' alt='plus'>
       </a>  
-      <a href="/doodles">
-        <img src="/images/dog.png" id="logo" alt="doodleDo-logo">
+      <a href='/doodles'>
+        <img src='/images/dog.png' id='logo' alt='doodleDo-logo'>
       </a>      
-      <a href="/users/<%= user.id %>">
-        <img class="avatar" src="<%= user.avatar %>" alt="avatar">
+      <a href='/users/<%= user.id %>'>
+        <img class='avatar' src='<%= user.avatar %>' alt='avatar'>
       </a>   
     </nav>
   </div>

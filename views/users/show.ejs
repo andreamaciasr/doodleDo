@@ -1,26 +1,24 @@
 <%- include('../partials/header') %>
 
     <br><br><br><br>
-    <div id="header-user-view">
-        <img id="profile-avatar" src="<%= user.avatar %>" alt="avatar">
-        <span id="user-name-view">
+    <div id='header-user-view'>
+        <img id='profile-avatar' src='<%= user.avatar %>' alt='avatar'>
+        <span id='user-name-view'>
             <%= user.name %> &nbsp;
         </span>
-    <button id="logout">
-        <a href="/logout">🌈 LOG OUT 🦕</a>
-    </button>    
+        <button id='logout'>
+            <a href='/logout'>🌈 LOG OUT 🦕</a>
+        </button>
     </div>
     <div>
         <% doodles.forEach(function(doodle) { %>
-            <li class="feed">
-                <a href="/users/<%= doodle._id%>">
-                    <img class="feed-post" src="<%= doodle.img %>">
+            <li class='feed'>
+                <a href='/users/<%= doodle._id%>'>
+                    <img class='feed-post' src='<%= doodle.img %>'>
                 </a>
             </li>
             <% }); %>
-    </div>
+        </div>
     <br>
 
-
-
-    <%- include('../partials/footer') %>
+<%- include('../partials/footer') %>
