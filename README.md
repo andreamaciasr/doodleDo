@@ -26,7 +26,7 @@ Thanks for coming by, I'm excited to see your doodles, or garabatos, as we say i
 - Cloudinary
 - Heroku
 
-# Getting Started
+# Visit DoodleDo:
 
 [DoodleDo](https://doodledo-27d6a85751ae.herokuapp.com/)
 
